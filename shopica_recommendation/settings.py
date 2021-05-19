@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nb+m&73s&mpajws1tdgd1)=i))h2j11u4uhs7hpg0g85my2)da'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shopica-recommendation.herokuapp.com']
 
 
 # Application definition

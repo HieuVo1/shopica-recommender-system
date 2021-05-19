@@ -1,0 +1,1 @@
+web: gunicorn shopica_recommendation.wsgi

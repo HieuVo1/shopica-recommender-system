@@ -21,8 +21,8 @@ class ProductDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductDetail
-        fields = ['productDetailId', 'quantity', 'colorName',
-                  'colorId', 'colorHex', 'sizeName', 'sizeId']
+        fields = ['productDetailId', 'quantity', 'Color',
+                  'colorId', 'colorHex', 'Size', 'sizeId']
 
 
 class ProductImageSerializer(serializers.ModelSerializer):

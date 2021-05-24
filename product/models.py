@@ -51,7 +51,7 @@ class ProductDetail(models.Model):
         return self.size.id
 
     @property
-    def size(self):
+    def Size(self):
         return self.size.size_name
 
     @property
@@ -59,7 +59,7 @@ class ProductDetail(models.Model):
         return self.color.id
 
     @property
-    def color(self):
+    def Color(self):
         return self.color.color_name
 
     @property

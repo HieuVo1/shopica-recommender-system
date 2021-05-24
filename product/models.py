@@ -43,33 +43,33 @@ class ProductDetail(models.Model):
     updated_by = models.CharField(max_length=100, blank=True, null=True)
     product = models.ForeignKey(
         Product, related_name='productDetails', on_delete=models.CASCADE)
-    size = models.ForeignKey('Size', models.DO_NOTHING)
-    color = models.ForeignKey('Color', models.DO_NOTHING)
+    productSize = models.ForeignKey('Size', models.DO_NOTHING,db_column ="size_id")
+    productColor = models.ForeignKey('Color', models.DO_NOTHING ,db_column ="color_id")
 
     @property
     def sizeId(self):
-        return self.size.id
+        return self.productSize.id
 
     @property
-    def Size(self):
-        return self.size.size_name
+    def size(self):
+        return self.productSize.size_name
 
     @property
     def colorId(self):
-        return self.color.id
+        return self.productColor.id
 
     @property
-    def Color(self):
-        return self.color.color_name
+    def color(self):
+        return self.productColor.color_name
 
     @property
     def colorHex(self):
-        return self.color.color_code
+        return self.productColor.color_code
 
     class Meta:
         managed = False
         db_table = 'product_detail'
-        unique_together = (('id', 'product', 'size', 'color'),)
+        unique_together = (('id', 'product', 'productSize', 'productColor'),)
 
 
 class ProductImage(models.Model):

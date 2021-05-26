@@ -48,7 +48,7 @@ class ProductSerializer(serializers.ModelSerializer):
     productImages = ProductImageSerializer(many=True)
     productName = serializers.CharField(source='product_name')
     storeId = serializers.CharField(source='store_id')
-
+    price = serializers.IntegerField(source="price")
     class Meta:
         model = Product
         fields = ['id', 'productName', 'storeId', 'price', 'categoryName', 'categoryId', 'brandName', 'brandId',

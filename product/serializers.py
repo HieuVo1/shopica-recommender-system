@@ -17,7 +17,7 @@ class ColorSerializer(serializers.ModelSerializer):
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
-    productDetailId = serializers.CharField(source='id')
+    productDetailId = serializers.IntegerField(source="id")
 
     class Meta:
         model = ProductDetail

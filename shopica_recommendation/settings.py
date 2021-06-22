@@ -84,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'shopica',
         'USER': 'admin',
-        'PASSWORD': 'Mwge4N3L',
-        'HOST': 'mysql-31601-0.cloudclusters.net',
-        'PORT': '31618',
+        'PASSWORD': 'wHqvNgaF',
+        'HOST': 'mysql-35636-0.cloudclusters.net',
+        'PORT': '35636',
     }
 }
 

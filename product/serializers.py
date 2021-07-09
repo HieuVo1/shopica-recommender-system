@@ -49,22 +49,29 @@ class ProductSerializer(serializers.ModelSerializer):
     productName = serializers.CharField(source='product_name')
     storeId = serializers.IntegerField(source='store_id')
     price = serializers.IntegerField()
+
     class Meta:
         model = Product
         fields = ['id', 'productName', 'storeId', 'price', 'categoryName', 'categoryId', 'brandName', 'brandId',
                   'productDetails', 'productImages']
 
 
-def predict(userId):
+def predict(accountId):
     filename = './final_model.sav'
     model = dump.load(filename)
+
     products = Product.objects.all()
     productDf = read_frame(products, fieldnames=['pk'])
+
     productDfCopy = productDf.copy()
+
     productDfCopy['Estimate_Score'] = productDfCopy['pk'].apply(
-        lambda x: model[1].predict(userId, x).est)
+        lambda x: model[1].predict(accountId, x).est)
+
     productDfCopy = productDfCopy.sort_values(
         by=['Estimate_Score'], ascending=False)
+
     listId = productDfCopy.head(4)['pk'].tolist()
     result = products.filter(id__in=listId)
+
     return result

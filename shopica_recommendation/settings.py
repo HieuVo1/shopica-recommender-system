@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-nb+m&73s&mpajws1tdgd1)=i))h2j11u4uhs7hpg0g85my2)da
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shopica-recommendation.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['shopica-recommendation.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
     'product',
+    'rating',
     'rest_framework',
     'corsheaders',
 ]
@@ -84,9 +85,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'shopica',
         'USER': 'admin',
-        'PASSWORD': 'wHqvNgaF',
-        'HOST': 'mysql-35636-0.cloudclusters.net',
-        'PORT': '35636',
+        'PASSWORD': '7AdSPErP',
+        'HOST': 'mysql-37613-0.cloudclusters.net',
+        'PORT': '37632',
     }
 }
 
